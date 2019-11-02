@@ -1,0 +1,7 @@
+/venv
+.idea
+*.pyx
+*.pyc
+__pycache__/
+*.zip
+*.log
