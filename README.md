@@ -47,7 +47,7 @@ DAVIS-2016 Dataset
 ## Presentation
 
 ### Proposal
-[Proposal Line](https://docs.google.com/presentation/d/1FmPelPnneTTqaT_jmA_4FJRjSgi6Vo5i46EMxYV1rv4/edit?usp=sharing)
+[Proposal Link](https://docs.google.com/presentation/d/1FmPelPnneTTqaT_jmA_4FJRjSgi6Vo5i46EMxYV1rv4/edit?usp=sharing)
 
 ## Contact
 
