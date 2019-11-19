@@ -1,0 +1,25 @@
+<html>
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Upload File</title>
+</head>
+<link rel="stylesheet" href="{% static "css/homepage.css" %}">
+<body>
+<div class="contact">
+
+		<form action="" method="post" enctype="multipart/form-data" >
+            <h1>upload a video</h1>
+			<ul>
+				<li>
+                    {% csrf_token %}
+                    {{uf.as_p}}
+					<input type="submit" value="upload" required>
+				</li>
+			</ul>
+		</form>
+	</div>
+</body>
+</html>

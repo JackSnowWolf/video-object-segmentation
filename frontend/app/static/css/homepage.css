@@ -1,0 +1,27 @@
+body{
+    font:14px/28px "微软雅黑";
+}
+.contact *:focus{
+    outline: none;
+}
+.contact{
+    width:700px;
+    height: auto;
+    background: #F6F6F6;
+    margin: 40px auto;
+    padding: 10px;
+}
+.contact ul{
+    width: 700px;
+}
+.contact ul li input[type=text]{
+    width: 220px;
+    height: 20px;
+    border:1px solid #AAAAAA;
+    padding:3px 8px;
+    border-radius: 5px;              /*圆角*/
+}
+.contact ul li input:focus{
+    border-color: #C00;
+    padding-right: 70px;
+}
