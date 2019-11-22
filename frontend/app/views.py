@@ -4,7 +4,9 @@ from django.http import HttpResponse
 from app.models import Video
 # Create your views here.
 class VideoForm(forms.Form):
+    #file_field = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
     videoname = forms.CharField()    #string
+    Frame = forms.FileField()
     File = forms.FileField()     #file
 
 def homepage(request):
@@ -12,10 +14,12 @@ def homepage(request):
         uf = VideoForm(request.POST, request.FILES)
         if uf.is_valid():  # if valid
             videoname = uf.cleaned_data['videoname']
-            File = uf.cleaned_data['headFile']
+            Frame = uf.cleaned_data['Frame']
+            File = uf.cleaned_data['File']
             # save file
             video = Video()
             video.videoname = videoname
+            video.Frame = Frame
             video.File = File
             video.save()
             return HttpResponse('upload successfully!')
