@@ -6,3 +6,5 @@ __pycache__/
 *.zip
 *.log
 *.mp4
+.DS_Store
+.Rhistory
