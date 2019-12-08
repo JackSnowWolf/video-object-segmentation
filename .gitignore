@@ -7,4 +7,5 @@ __pycache__/
 *.log
 *.mp4
 .DS_Store
+tmp
 .Rhistory
