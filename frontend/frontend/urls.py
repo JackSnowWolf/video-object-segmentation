@@ -19,5 +19,8 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app/',views.homepage),
+    path('homepage/',views.homepage, name='homepage'),
+    path('upload/',views.upload, name='upload'),
+    path('video/',views.video, name='video'),
+
 ]

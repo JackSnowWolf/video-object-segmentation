@@ -10,6 +10,10 @@ class VideoForm(forms.Form):
     File = forms.FileField()     #file
 
 def homepage(request):
+
+    return render_to_response('homepage.html')
+
+def upload(request):
     if request.method == "POST":
         uf = VideoForm(request.POST, request.FILES)
         if uf.is_valid():  # if valid
@@ -22,8 +26,13 @@ def homepage(request):
             video.Frame = Frame
             video.File = File
             video.save()
-            return HttpResponse('upload successfully!')
+            return render_to_response('video.html')
     else:
         uf = VideoForm()
 
-    return render_to_response('homepage.html',{'uf':uf})
+    return render_to_response('upload.html',{'uf':uf})
+
+
+def video(request):
+
+    return render_to_response('video.html')

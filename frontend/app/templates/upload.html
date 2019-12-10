@@ -1,0 +1,41 @@
+<html>
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Upload File</title>
+</head>
+
+<link rel="stylesheet" href="{% static "css/homepage.css" %}">
+<link rel="stylesheet" href="{% static "css/video-js-7.7.3/video-js.css" %}">
+<link rel="stylesheet" href="{% static "bootstrap-3.4.1-dist/css/bootstrap.css" %}">
+<link rel="stylesheet" href="{% static "assets/css/amazeui.css" %}">
+
+<script src="{% static "css/video-js-7.7.3/video.min.js" %}"></script>
+<script src="{% static "bootstrap-3.4.1-dist/js/bootstrap.js" %}"></script>
+<script src="{% static "lazyload-master/amazeui.lazyload.js" %}"></script>
+
+
+<body>
+<ul class="am-nav am-nav-pills am-nav-justify">
+    <li><a href="{% url 'homepage' %}" class="am-icon-home am-icon-md">Homepage</a></li>
+    <li class="am-active"><a href="#" class="am-icon-cloud-upload am-icon-md">Upload</a></li>
+    <li><a href="{% url 'video' %}" class="am-icon-video-camera am-icon-md">Video</a></li>
+</ul>
+
+<div class="contact" style="background:rgba(255,000,255,0)">
+		<form action="" method="post" enctype="multipart/form-data" >
+            <h1>upload a video</h1>
+			<ul>
+				<li>
+                    {% csrf_token %}
+                    {{uf.as_p}}
+					<input type="submit" value="upload" required>
+				</li>
+			</ul>
+		</form>
+	</div>
+
+</body>
+</html>

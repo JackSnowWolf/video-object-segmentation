@@ -1,0 +1,11 @@
+.DS_Store
+node_modules
+.idea
+dist
+index.html
+gulpfile.js
+.editorconfig
+.gitignore
+.eslintrc
+.npmignore
+bower.json

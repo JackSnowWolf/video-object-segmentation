@@ -1,0 +1,158 @@
+<html>
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Segmentation Video</title>
+</head>
+
+<link rel="stylesheet" href="{% static "css/homepage.css" %}">
+<link rel="stylesheet" href="{% static "css/video-js-7.7.3/video-js.css" %}">
+<link rel="stylesheet" href="{% static "bootstrap-3.4.1-dist/css/bootstrap.css" %}">
+<link rel="stylesheet" href="{% static "assets/css/amazeui.css" %}">
+<script src="{% static "css/video-js-7.7.3/video.min.js" %}"></script>
+<script src="{% static "bootstrap-3.4.1-dist/js/bootstrap.js" %}"></script>
+<script src="{% static "lazyload-master/amazeui.lazyload.js" %}"></script>
+
+
+<body>
+<ul class="am-nav am-nav-pills am-nav-justify">
+    <li><a href="{% url 'homepage' %}" class="am-icon-home am-icon-md">Homepage</a></li>
+    <li><a href="{% url 'upload' %}" class="am-icon-cloud-upload am-icon-md">Upload</a></li>
+    <li class="am-active"><a href="#" class="am-icon-video-camera am-icon-md">Video</a></li>
+</ul>
+<div class="main">
+			<!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="container-fluid">
+
+
+            <div class="row">
+
+                <div class="col-md-9">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><strong>segementation video</strong></h3>
+
+                        </div>
+
+
+                        <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="1024" height="768"
+                              poster="/static/test/frame1.png"
+                              data-setup="{}">
+                            <source src="/static/test/upload1.mp4" type='video/mp4' />
+
+                            <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track>
+                            <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track>
+                        </video>
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-3">
+
+                    <div class="row">
+                        <div class="panel" style="background:rgba(255,000,255,0)">
+
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><strong>test</strong></h3>
+                            </div>
+
+                        <div class="panel-body">
+
+                            <span style="font-size:18px;color:#000000"> a:  </span>
+                            <button type="button" class="am-btn am-btn-primary am-active">on</button>
+                            <button type="button" class="am-btn am-btn-default am-active">off</button>
+
+                            <hr/>
+
+                            <span style="font-size:18px;color:#000000"> b:  </span>
+                            <button type="button" class="am-btn am-btn-primary am-active">running</button>
+                            <button type="button" class="am-btn am-btn-default am-active">stop</button>
+
+                             <hr/>
+
+                            <p style="font-size:18px;color:#000000">test</p>
+
+                            <button type="button" class="am-btn am-btn-default am-round">a</button>
+
+                            <button type="button" class="am-btn am-btn-default am-round">b</button>
+
+                            <button type="button" class="am-btn am-btn-default am-round">c</button>
+
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="row" >
+                        <div class="panel" style="background:rgba(255,000,255,0)">
+
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><strong>video information</strong></h3>
+                            </div>
+
+                        <div class="panel-body" >
+                            <h3 class="panel-title"><strong>video name：</strong></h3>
+                            <hr/>
+                            <h3 class="panel-title"><strong>video size：</strong></h3>
+                            <hr/>
+                            <h3 class="panel-title"><strong>frames number：</strong></h3>
+                            <hr/>
+                            <h3 class="panel-title"><strong>time：</strong></h3>
+                            <hr/>
+
+                            <div id="record01" style="width: 300px;height:100px;"></div>
+                            <script type="text/javascript">
+                            var record01 = echarts.init(document.getElementById('record01'));
+                            record01.title = '坐标轴刻度与标签对齐';
+                                option = {
+                                title: {
+                                    text: '运行次数展示'
+                                },
+                                tooltip: {
+                                    trigger: 'axis'
+                                },
+                                legend: {
+                                },
+                                grid: {
+                                    left: '3%',
+                                    right: '4%',
+                                    bottom: '3%',
+                                    containLabel: true
+                                },
+                                xAxis: {
+                                    type: 'category',
+                                    boundaryGap: false,
+                                    data: ['08-12','08-12','08-12','08-12','08-12','08-12','今天']
+                                },
+                                yAxis: {
+                                    type: 'value'
+                                },
+                                series: [
+                                    {
+                                        name:'运行次数',
+                                        type:'line',
+                                        stack: '总量',
+                                        data:[3, 2, 4, 6, 7, 4, 5]
+                                    },
+
+                                ]
+                            };
+                        record01.setOption(option);
+
+
+                            </script>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+</div>
+</body>
+</html>

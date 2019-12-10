@@ -1,6 +1,3 @@
-body{
-    font:14px/28px "微软雅黑";
-}
 .contact *:focus{
     outline: none;
 }
@@ -19,9 +16,23 @@ body{
     height: 20px;
     border:1px solid #AAAAAA;
     padding:3px 8px;
-    border-radius: 5px;              /*圆角*/
+    border-radius: 5px;
 }
 .contact ul li input:focus{
     border-color: #C00;
     padding-right: 70px;
+}
+.main_left{
+    width: 150px;
+    height: 100%;
+    float:left;
+    background:#c0c0c0;
+    cursor:pointer;
+}
+.main_right{
+    width: 350px;
+    height: 100%;
+    float:right;
+    background:#c0c0c0;
+    cursor:pointer;
 }
