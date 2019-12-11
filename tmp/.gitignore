@@ -3,4 +3,5 @@
 # Except this file
 !.gitignore
 # add example
+!blackswan
 !blackswan/*
