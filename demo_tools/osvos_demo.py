@@ -38,7 +38,7 @@ overlay_color = [255, 0, 0]
 transparency = 0.5
 
 
-def demo(seq_name, learning_rate=1e-8,
+def demo(seq_name, first_mask, learning_rate=1e-8,
          save_step=max_training_iters,
          side_supervision=3, display_step=10, train_model=True):
     result_path = os.path.join('tmp', seq_name, 'pred')
@@ -58,7 +58,7 @@ def demo(seq_name, learning_rate=1e-8,
         os.makedirs(result_path)
     if train_model:
         train_imgs = [os.path.join('tmp', seq_name, 'img', '00000.jpg') + ' ' +
-                      os.path.join('tmp', seq_name, 'first_mask.png')]
+                      first_mask]
         dataset = Dataset(train_imgs, test_imgs, './', data_aug=True)
     else:
         dataset = Dataset(None, test_imgs, './')

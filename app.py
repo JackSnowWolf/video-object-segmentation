@@ -65,7 +65,8 @@ def infer():
             else:
                 logging.info("finetune pre-trained model for new sequence")
             video_utils.video2img(video_path, img_path)
-            osvos_demo.demo(seq_name=video_name, train_model=tag)
+            osvos_demo.demo(seq_name=video_name, first_mask=first_mask_path,
+                            train_model=tag)
             result_video_path = video_utils.render_video(video_name)
 
             return send_file(result_video_path)
