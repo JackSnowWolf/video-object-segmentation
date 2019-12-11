@@ -49,13 +49,22 @@ def infer():
             video_name = os.path.splitext(video_name)[0]
             video_path, img_path, first_mask_path = video_utils.init_video(
                 video_name)
+
+            video_name_res = video_name + "-concat.mp4"
+            if video_name_res in video_utils.cached_video:
+                logging.info("Hit video in the cache")
+                return send_file(
+                    os.path.join(video_path).replace(".mp4", "-concat.mp4"))
+
             video_file.save(video_path)
             first_mask.save(first_mask_path)
 
-            tag = video_name in video_utils.cached_video
+            tag = video_name not in video_utils.cached_model
             if tag:
-                logging.info("Hit video in the cache")
-                video_utils.video2img(video_path, img_path)
+                logging.info("Hit previous model weight")
+            else:
+                logging.info("finetune pre-trained model for new sequence")
+            video_utils.video2img(video_path, img_path)
             osvos_demo.demo(seq_name=video_name, train_model=tag)
             result_video_path = video_utils.render_video(video_name)
 

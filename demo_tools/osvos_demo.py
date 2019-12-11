@@ -35,7 +35,7 @@ max_training_iters = 500
 
 # Show results
 overlay_color = [255, 0, 0]
-transparency = 0.6
+transparency = 0.5
 
 
 def demo(seq_name, learning_rate=1e-8,
@@ -57,7 +57,7 @@ def demo(seq_name, learning_rate=1e-8,
     if not os.path.exists(result_path):
         os.makedirs(result_path)
     if train_model:
-        train_imgs = [os.path.join('tmp', seq_name, 'img', '00000.png') + ' ' +
+        train_imgs = [os.path.join('tmp', seq_name, 'img', '00000.jpg') + ' ' +
                       os.path.join('tmp', seq_name, 'first_mask.png')]
         dataset = Dataset(train_imgs, test_imgs, './', data_aug=True)
     else:
@@ -78,9 +78,8 @@ def demo(seq_name, learning_rate=1e-8,
     # Test the network
     with tf.Graph().as_default():
         with tf.device('/gpu:' + str(gpu_id)):
-            checkpoint_path = os.path.join('models', seq_name,
-                                           seq_name + '.ckpt-' + str(
-                                               max_training_iters))
+            checkpoint_path = tf.train.latest_checkpoint(
+                os.path.join('models', seq_name))
             osvos.test(dataset, checkpoint_path, result_path)
 
     for img_p in test_frames:
@@ -88,9 +87,9 @@ def demo(seq_name, learning_rate=1e-8,
         img = np.array(Image.open(
             os.path.join('tmp', seq_name, "img", img_p)))
         mask = np.array(
-            Image.open(os.path.join(result_path, frame_num + '.png')))
+            Image.open(os.path.join(result_path, frame_num + '.jpg')))
         mask = mask // np.max(mask)
-        im_over = np.ndarray(img.shape)
+        im_over = np.ndarray(img.shape, dtype=np.float)
         im_over[:, :, 0] = (1 - mask) * img[:, :, 0] + mask * (
                 overlay_color[0] * transparency + (1 - transparency) * img[:, :,
                                                                        0])
@@ -100,7 +99,9 @@ def demo(seq_name, learning_rate=1e-8,
         im_over[:, :, 2] = (1 - mask) * img[:, :, 2] + mask * (
                 overlay_color[2] * transparency + (1 - transparency) * img[:, :,
                                                                        2])
-        imageio.imwrite(os.path.join(concate_path, frame_num + ".png"), im_over)
+        im_over = np.where(im_over > 255, 255, im_over)
+        im_over = im_over.astype(np.uint8)
+        imageio.imwrite(os.path.join(concate_path, frame_num + ".jpg"), im_over)
 
 
 # For test

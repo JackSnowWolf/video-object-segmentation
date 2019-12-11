@@ -1,21 +1,30 @@
 import os
 
 TMP_FOLDER = "tmp"
+
 MODEL_FOLDER = "models"
 cached_video = set()
+cached_model = set()
+for f in os.listdir(TMP_FOLDER):
+    if os.path.isdir(os.path.join(TMP_FOLDER, f)):
+        for i in os.listdir(os.path.join(TMP_FOLDER, f)):
+            if os.path.splitext(i)[1] == ".mp4":
+                cached_video.add(i)
+
 for f in os.listdir(MODEL_FOLDER):
     if os.path.isdir(os.path.join(MODEL_FOLDER, f)):
-        cached_video.add(f)
+        cached_model.add(f)
 
 
 def video2img(video_path, img_folder):
-    cmd = "ffmpeg -i %s -r 24 -t 140 -start_number 0 %s/%%05d.png" % (video_path, img_folder)
+    cmd = "ffmpeg -i %s -r 24 -t 140 -start_number 0 %s/%%05d.jpg" % (
+    video_path, img_folder)
     print(cmd)
     os.system(cmd)
 
 
 def img2video(img_folder, video_path):
-    cmd = "ffmpeg -f image2 -i %s/%%05d.png -c:v libx265 -preset" \
+    cmd = "ffmpeg -f image2 -i %s/%%05d.jpg -c:v libx265 -preset" \
           " medium -crf 18 -r 24 %s" % (
               img_folder, video_path)
     print(cmd)
