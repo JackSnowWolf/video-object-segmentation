@@ -38,26 +38,23 @@ overlay_color = [255, 0, 0]
 transparency = 0.5
 
 
-def demo(seq_name, first_mask, learning_rate=1e-8,
+def demo(seq_name, img_path, result_path, concate_path, first_mask,
+         learning_rate=1e-8,
          save_step=max_training_iters,
          side_supervision=3, display_step=10, train_model=True):
-    result_path = os.path.join('tmp', seq_name, 'pred')
-    concate_path = os.path.join('tmp', seq_name, 'concat')
-
     logs_path = os.path.join('models', seq_name)
 
     # Define Dataset
     test_frames = sorted(
-        os.listdir(os.path.join('tmp', seq_name, 'img')))
-    test_imgs = [os.path.join('tmp', seq_name, 'img', frame) for
-                 frame in test_frames]
+        os.listdir(img_path))
+    test_imgs = [os.path.join(img_path, frame) for frame in test_frames]
 
     if not os.path.exists(concate_path):
         os.makedirs(concate_path)
     if not os.path.exists(result_path):
         os.makedirs(result_path)
     if train_model:
-        train_imgs = [os.path.join('tmp', seq_name, 'img', '00000.jpg') + ' ' +
+        train_imgs = [os.path.join(img_path, '00000.jpg') + ' ' +
                       first_mask]
         dataset = Dataset(train_imgs, test_imgs, './', data_aug=True)
     else:
@@ -102,9 +99,3 @@ def demo(seq_name, first_mask, learning_rate=1e-8,
         im_over = np.where(im_over > 255, 255, im_over)
         im_over = im_over.astype(np.uint8)
         imageio.imwrite(os.path.join(concate_path, frame_num + ".jpg"), im_over)
-
-
-# For test
-if __name__ == '__main__':
-    seq_name = "car-shadow"
-    demo(seq_name, train_model=True)
