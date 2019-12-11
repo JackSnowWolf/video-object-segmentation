@@ -52,8 +52,10 @@ def infer():
             video_file.save(video_path)
             first_mask.save(first_mask_path)
 
-            video_utils.video2img(video_path, img_path)
-            tag = (video_name in video_utils.cached_video)
+            tag = video_name in video_utils.cached_video
+            if tag:
+                logging.info("Hit video in the cache")
+                video_utils.video2img(video_path, img_path)
             osvos_demo.demo(seq_name=video_name, train_model=tag)
             result_video_path = video_utils.render_video(video_name)
 

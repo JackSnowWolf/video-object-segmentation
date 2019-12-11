@@ -100,7 +100,7 @@ def demo(seq_name, learning_rate=1e-8,
         im_over[:, :, 2] = (1 - mask) * img[:, :, 2] + mask * (
                 overlay_color[2] * transparency + (1 - transparency) * img[:, :,
                                                                        2])
-        imageio.imwrite(os.path.join(concate_path, frame_num + ".jpg"), im_over)
+        imageio.imwrite(os.path.join(concate_path, frame_num + ".png"), im_over)
 
 
 # For test
