@@ -57,7 +57,7 @@ def demo(seq_name, learning_rate=1e-8,
     if not os.path.exists(result_path):
         os.makedirs(result_path)
     if train_model:
-        train_imgs = [os.path.join('tmp', seq_name, 'img', '00000.jpg') + ' ' +
+        train_imgs = [os.path.join('tmp', seq_name, 'img', '00000.png') + ' ' +
                       os.path.join('tmp', seq_name, 'first_mask.png')]
         dataset = Dataset(train_imgs, test_imgs, './', data_aug=True)
     else:
@@ -103,6 +103,7 @@ def demo(seq_name, learning_rate=1e-8,
         imageio.imwrite(os.path.join(concate_path, frame_num + ".jpg"), im_over)
 
 
+# For test
 if __name__ == '__main__':
     seq_name = "car-shadow"
     demo(seq_name, train_model=True)
