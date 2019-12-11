@@ -3,9 +3,11 @@
 # Except this file
 !.gitignore
 !.gitattributes
+
+# model weigth example
+
 !blackswan/
+!blackswan.ckpt-2000.data-00000-of-00001
 !blackswan/blackswan.ckpt-2000.index
 !blackswan/blackswan.ckpt-2000.meta
 !blackswan/checkpoint
-# model weigth example
-# !blackswan.ckpt-2000.data-00000-of-00001
