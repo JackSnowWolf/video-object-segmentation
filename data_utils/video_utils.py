@@ -24,7 +24,7 @@ def video2img(video_path, img_folder):
 
 
 def img2video(img_folder, video_path):
-    cmd = "ffmpeg -f image2 -i %s/%%05d.jpg -c:v libx265 -preset" \
+    cmd = "ffmpeg -f image2 -i %s/%%05d.jpg -c:v libx264 -preset" \
           " medium -crf 18 -r 24 %s" % (
               img_folder, video_path)
     print(cmd)
