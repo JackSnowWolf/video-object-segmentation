@@ -20,10 +20,10 @@
 
 <body>
 <ul class="am-nav am-nav-pills am-nav-justify">
-    <li><a href="{% url 'homepage' %}" class="am-icon-home am-icon-md">Homepage</a></li>
-    <li><a href="{% url 'upload' %}" class="am-icon-cloud-upload am-icon-md">Upload</a></li>
-    <li class="am-active"><a href="#" class="am-icon-video-camera am-icon-md">Video</a></li>
-    <li><a href="{% url 'vis' %}" class="am-icon-pie-chart am-icon-md">Visualization</a></li>
+    <li><a href="{% url 'homepage' %}" class="am-icon-home am-icon-md">     Homepage</a></li>
+    <li><a href="{% url 'upload' %}" class="am-icon-cloud-upload am-icon-md">     Upload</a></li>
+    <li class="am-active"><a href="#" class="am-icon-video-camera am-icon-md">     Video</a></li>
+    <li><a href="{% url 'vis' %}" class="am-icon-pie-chart am-icon-md">     Visualization</a></li>
 </ul>
 <div class="main">
 			<!-- MAIN CONTENT -->
@@ -61,30 +61,27 @@
                         <div class="panel" style="background:rgba(255,000,255,0)">
 
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>test</strong></h3>
+                                <h3 class="panel-title"><strong>Status</strong></h3>
                             </div>
 
                         <div class="panel-body">
 
-                            <span style="font-size:18px;color:#000000"> a:  </span>
-                            <button type="button" class="am-btn am-btn-primary am-active">on</button>
-                            <button type="button" class="am-btn am-btn-default am-active">off</button>
 
-                            <hr/>
-
-                            <span style="font-size:18px;color:#000000"> b:  </span>
-                            <button type="button" class="am-btn am-btn-primary am-active">running</button>
-                            <button type="button" class="am-btn am-btn-default am-active">stop</button>
+                            <span style="font-size:18px;color:#000000"> Video Rending:  </span>
+                            <button type="button" class="am-btn am-btn-primary am-active">Success</button>
+                            <button type="button" class="am-btn am-btn-default am-active">Fail</button>
 
                              <hr/>
 
-                            <p style="font-size:18px;color:#000000">test</p>
+                            <span style="font-size:18px;color:#000000"> Object Tracking:  </span>
+                            <button type="button" class="am-btn am-btn-primary am-active">On</button>
+                            <button type="button" class="am-btn am-btn-default am-active">Off</button>
 
-                            <button type="button" class="am-btn am-btn-default am-round">a</button>
+                            <hr/>
 
-                            <button type="button" class="am-btn am-btn-default am-round">b</button>
 
-                            <button type="button" class="am-btn am-btn-default am-round">c</button>
+                            <p style="font-size:18px;color:#000000"></p>
+
 
                         </div>
                         </div>
@@ -94,13 +91,18 @@
                         <div class="panel" style="background:rgba(255,000,255,0)">
 
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>video information</strong></h3>
+                                <h3 class="panel-title"><strong>VIDEO INFORMATION</strong></h3>
                             </div>
 
                         <div class="panel-body" >
-
-                             <h3 class="panel-body"><strong>video date</strong></h3>
-
+                            <h3 class="panel-title"><strong>Content-Type: video/mp4</strong></h3>
+                            <hr/>
+                            <h3 class="panel-title"><strong>Cache-Control: public</strong></h3>
+                            <hr/>
+                            <h3 class="panel-title"><strong>Server:  Werlzeug/0.15.4 python/3.7.3</strong></h3>
+                            <hr/>
+                            <h3 class="panel-title"><strong>Video-Codecs:  H.264</strong></h3>
+                            <hr/>
                         </div>
                     </div>
 

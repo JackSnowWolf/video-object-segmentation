@@ -18,25 +18,43 @@
 
 <body>
 <ul class="am-nav am-nav-pills am-nav-justify">
-    <li class="am-active"><a href="#" class="am-icon-home am-icon-md">Homepage</a></li>
-    <li><a href="{% url 'upload' %}" class="am-icon-cloud-upload am-icon-md">Upload</a></li>
-    <li><a href="{% url 'video' %}" class="am-icon-video-camera am-icon-md">Video</a></li>
-    <li><a href="{% url 'vis' %}" class="am-icon-pie-chart am-icon-md">Visualization</a></li>
+    <li class="am-active"><a href="#" class="am-icon-home am-icon-md">     Homepage</a></li>
+    <li><a href="{% url 'upload' %}" class="am-icon-cloud-upload am-icon-md">     Upload</a></li>
+    <li><a href="{% url 'video' %}" class="am-icon-video-camera am-icon-md">     Video</a></li>
+    <li><a href="{% url 'vis' %}" class="am-icon-pie-chart am-icon-md">     Visualization</a></li>
 </ul>
 <div class="am-panel am-panel-default">
   <div class="am-panel-hd">
     <h3 class="am-panel-title">About our project</h3>
   </div>
   <div class="am-panel-bd">
-    <p>Video Object Segementation Based on pixel-level annotated dataset</p>
+    <p><strong>Video Object Segementation Based on pixel-level annotated dataset</strong></p>
       <p>ch3467/Chong Hu/EE</p>
       <p>yl4238/Yanlin Liu/EE</p>
-      <p><span class="am-icon-github am-icon-lg"></span>   https://github.com/JackSnowWolf/video-object-segmentation-STCNN </p>
+      <p><span class="am-icon-github am-icon-lg"></span> <a href="https://github.com/JackSnowWolf/video-object-segmentation-STCNN ">https://github.com/JackSnowWolf/video-object-segmentation-STCNN </a></p>
   </div>
-  <table class="am-table">
-    ...
-  </table>
-  <div class="am-panel-footer">...</div>
+    <div class="am-panel-footer"><strong>EECS 6893 Final Project</strong></div>
+  <div class="am-g">
+  <div class="col-sm-4">
+    <div class="am-thumbnail">
+      <img src="{% static "css/f1.png" %}" alt=""/>
+      <figcaption class="am-thumbnail-caption">Introduction</figcaption>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <a href="#" class="am-thumbnail">
+      <img src="{% static "css/f2.png" %}" alt=""/>
+      <figcaption class="am-thumbnail-caption">Data</figcaption>
+    </a>
+  </div>
+  <div class="col-sm-4">
+    <figure class="am-thumbnail">
+      <img src="{% static "css/f3.png" %}" alt=""/>
+      <figcaption class="am-thumbnail-caption">System</figcaption>
+    </figure>
+  </div>
+</div>
 </div>
 </body>
 </html>
