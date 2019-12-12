@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Segmentation Video</title>
+
+
 </head>
 
 <link rel="stylesheet" href="{% static "css/homepage.css" %}">
@@ -14,13 +16,14 @@
 <script src="{% static "css/video-js-7.7.3/video.min.js" %}"></script>
 <script src="{% static "bootstrap-3.4.1-dist/js/bootstrap.js" %}"></script>
 <script src="{% static "lazyload-master/amazeui.lazyload.js" %}"></script>
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
 <body>
 <ul class="am-nav am-nav-pills am-nav-justify">
     <li><a href="{% url 'homepage' %}" class="am-icon-home am-icon-md">Homepage</a></li>
     <li><a href="{% url 'upload' %}" class="am-icon-cloud-upload am-icon-md">Upload</a></li>
     <li class="am-active"><a href="#" class="am-icon-video-camera am-icon-md">Video</a></li>
+    <li><a href="{% url 'vis' %}" class="am-icon-pie-chart am-icon-md">Visualization</a></li>
 </ul>
 <div class="main">
 			<!-- MAIN CONTENT -->
@@ -39,7 +42,7 @@
 
 
                         <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="1024" height="768"
-                              
+
                               data-setup="{}">
                             <source src="{{v}}" type='video/mp4' />
 
@@ -95,57 +98,9 @@
                             </div>
 
                         <div class="panel-body" >
-                            <h3 class="panel-title"><strong>video name：</strong></h3>
-                            <hr/>
-                            <h3 class="panel-title"><strong>video size：</strong></h3>
-                            <hr/>
-                            <h3 class="panel-title"><strong>frames number：</strong></h3>
-                            <hr/>
-                            <h3 class="panel-title"><strong>time：</strong></h3>
-                            <hr/>
 
-                            <div id="record01" style="width: 300px;height:100px;"></div>
-                            <script type="text/javascript">
-                            var record01 = echarts.init(document.getElementById('record01'));
-                            record01.title = '坐标轴刻度与标签对齐';
-                                option = {
-                                title: {
-                                    text: '运行次数展示'
-                                },
-                                tooltip: {
-                                    trigger: 'axis'
-                                },
-                                legend: {
-                                },
-                                grid: {
-                                    left: '3%',
-                                    right: '4%',
-                                    bottom: '3%',
-                                    containLabel: true
-                                },
-                                xAxis: {
-                                    type: 'category',
-                                    boundaryGap: false,
-                                    data: ['08-12','08-12','08-12','08-12','08-12','08-12','今天']
-                                },
-                                yAxis: {
-                                    type: 'value'
-                                },
-                                series: [
-                                    {
-                                        name:'运行次数',
-                                        type:'line',
-                                        stack: '总量',
-                                        data:[3, 2, 4, 6, 7, 4, 5]
-                                    },
+                             <h3 class="panel-body"><strong>video date</strong></h3>
 
-                                ]
-                            };
-                        record01.setOption(option);
-
-
-                            </script>
-                        </div>
                         </div>
                     </div>
 

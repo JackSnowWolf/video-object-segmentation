@@ -54,3 +54,7 @@ def video(request):
 
     return render_to_response('video.html')
 
+def vis(request):
+
+    return render_to_response('vis.html')
+

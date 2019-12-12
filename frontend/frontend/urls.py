@@ -22,5 +22,5 @@ urlpatterns = [
     path('homepage/',views.homepage, name='homepage'),
     path('upload/',views.upload, name='upload'),
     path('video/',views.video, name='video'),
-
+    path('vis/',views.vis, name='vis'),
 ]
