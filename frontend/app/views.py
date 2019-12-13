@@ -1,8 +1,6 @@
 from django.shortcuts import render,render_to_response
 from django import forms
-from django.http import HttpResponse
 from app.models import Video
-from django.core.files.storage import FileSystemStorage
 import requests
 import os
 import json
@@ -13,9 +11,7 @@ class VideoForm(forms.Form):
     Frame = forms.FileField()
     File = forms.FileField()     #file
 
-
 url='http://127.0.0.1:5000/api/infer'
-
 
 def homepage(request):
 
@@ -51,10 +47,11 @@ def upload(request):
 
 
 def video(request):
-
     return render_to_response('video.html')
 
 def vis(request):
-
     return render_to_response('vis.html')
+
+def gallery(request):
+    return render_to_response('gallery.html')
 

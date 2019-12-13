@@ -23,11 +23,12 @@
     <li class="am-active"><a href="#" class="am-icon-cloud-upload am-icon-md">     Upload</a></li>
     <li><a href="{% url 'video' %}" class="am-icon-video-camera am-icon-md">     Video</a></li>
     <li><a href="{% url 'vis' %}" class="am-icon-pie-chart am-icon-md">     Visualization</a></li>
+    <li><a href="{% url 'gallery' %}" class="am-icon-bank am-icon-md">     Gallery</a></li>
 </ul>
 
 <div class="contact" style="background:rgba(255,000,255,0)">
 		<form action="" method="post" enctype="multipart/form-data" >
-            <h1>upload a video</h1>
+            <h1>Upload a video</h1>
 			<ul>
 				<li>
                     {% csrf_token %}

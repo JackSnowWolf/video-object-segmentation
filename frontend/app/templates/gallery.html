@@ -1,0 +1,162 @@
+<html>
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gallery</title>
+</head>
+
+<link rel="stylesheet" href="{% static "css/homepage.css" %}">
+<link rel="stylesheet" href="{% static "css/video-js-7.7.3/video-js.css" %}">
+<link rel="stylesheet" href="{% static "bootstrap-3.4.1-dist/css/bootstrap.css" %}">
+<link rel="stylesheet" href="{% static "assets/css/amazeui.css" %}">
+<script src="{% static "css/video-js-7.7.3/video.min.js" %}"></script>
+<script src="{% static "bootstrap-3.4.1-dist/js/bootstrap.js" %}"></script>
+<script src="{% static "lazyload-master/amazeui.lazyload.js" %}"></script>
+
+
+<body>
+<ul class="am-nav am-nav-pills am-nav-justify">
+    <li><a href="{% url 'homepage' %}" class="am-icon-home am-icon-md">     Homepage</a></li>
+    <li><a href="{% url 'upload' %}" class="am-icon-cloud-upload am-icon-md">     Upload</a></li>
+    <li><a href="{% url 'video' %}" class="am-icon-video-camera am-icon-md">     Video</a></li>
+    <li><a href="{% url 'vis' %}" class="am-icon-pie-chart am-icon-md">     Visualization</a></li>
+    <li class="am-active"><a href="{% url 'gallery' %}" class="am-icon-bank am-icon-md">     Gallery</a></li>
+</ul>
+    <div class="am-panel-footer"><strong>Cached Rendered Video Gallery</strong></div>
+  <div class="am-g">
+  <div class="col-sm-4">
+    <div class="am-thumbnail">
+      <img src="{% static "gallery/1.jpg" %}" alt=""/>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <a href="#" class="am-thumbnail">
+      <img src="{% static "gallery/2.jpg" %}" alt=""/>
+    </a>
+  </div>
+  <div class="col-sm-4">
+    <figure class="am-thumbnail">
+      <img src="{% static "gallery/3.jpg" %}" alt=""/>
+    </figure>
+  </div>
+</div>
+
+  <div class="am-g">
+  <div class="col-sm-4">
+    <div class="am-thumbnail">
+      <img src="{% static "gallery/4.jpg" %}" alt=""/>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <a href="#" class="am-thumbnail">
+      <img src="{% static "gallery/5.jpg" %}" alt=""/>
+    </a>
+  </div>
+  <div class="col-sm-4">
+    <figure class="am-thumbnail">
+      <img src="{% static "gallery/6.jpg" %}" alt=""/>
+    </figure>
+  </div>
+</div>
+
+  <div class="am-g">
+  <div class="col-sm-4">
+    <div class="am-thumbnail">
+      <img src="{% static "gallery/7.jpg" %}" alt=""/>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <a href="#" class="am-thumbnail">
+      <img src="{% static "gallery/8.jpg" %}" alt=""/>
+    </a>
+  </div>
+  <div class="col-sm-4">
+    <figure class="am-thumbnail">
+      <img src="{% static "gallery/9.jpg" %}" alt=""/>
+    </figure>
+  </div>
+</div>
+
+  <div class="am-g">
+  <div class="col-sm-4">
+    <div class="am-thumbnail">
+      <img src="{% static "gallery/10.jpg" %}" alt=""/>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <a href="#" class="am-thumbnail">
+      <img src="{% static "gallery/11.jpg" %}" alt=""/>
+    </a>
+  </div>
+  <div class="col-sm-4">
+    <figure class="am-thumbnail">
+      <img src="{% static "gallery/12.jpg" %}" alt=""/>
+    </figure>
+  </div>
+</div>
+
+  <div class="am-g">
+  <div class="col-sm-4">
+    <div class="am-thumbnail">
+      <img src="{% static "gallery/13.jpg" %}" alt=""/>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <a href="#" class="am-thumbnail">
+      <img src="{% static "gallery/14.jpg" %}" alt=""/>
+    </a>
+  </div>
+  <div class="col-sm-4">
+    <figure class="am-thumbnail">
+      <img src="{% static "gallery/15.jpg" %}" alt=""/>
+    </figure>
+  </div>
+</div>
+
+  <div class="am-g">
+  <div class="col-sm-4">
+    <div class="am-thumbnail">
+      <img src="{% static "gallery/16.jpg" %}" alt=""/>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <a href="#" class="am-thumbnail">
+      <img src="{% static "gallery/17.jpg" %}" alt=""/>
+    </a>
+  </div>
+  <div class="col-sm-4">
+    <figure class="am-thumbnail">
+      <img src="{% static "gallery/18.jpg" %}" alt=""/>
+    </figure>
+  </div>
+</div>
+
+  <div class="am-g">
+  <div class="col-sm-4">
+    <div class="am-thumbnail">
+      <img src="{% static "gallery/19.jpg" %}" alt=""/>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <a href="#" class="am-thumbnail">
+      <img src="{% static "gallery/20.jpg" %}" alt=""/>
+    </a>
+  </div>
+  <div class="col-sm-4">
+    <figure class="am-thumbnail">
+      <img src="{% static "gallery/21.jpg" %}" alt=""/>
+    </figure>
+  </div>
+</div>
+
+</body>
+</html>

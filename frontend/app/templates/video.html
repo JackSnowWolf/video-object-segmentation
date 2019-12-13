@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Segmentation Video</title>
+    <title>Rendering Video</title>
 
 
 </head>
@@ -24,6 +24,8 @@
     <li><a href="{% url 'upload' %}" class="am-icon-cloud-upload am-icon-md">     Upload</a></li>
     <li class="am-active"><a href="#" class="am-icon-video-camera am-icon-md">     Video</a></li>
     <li><a href="{% url 'vis' %}" class="am-icon-pie-chart am-icon-md">     Visualization</a></li>
+    <li><a href="{% url 'gallery' %}" class="am-icon-bank am-icon-md">     Gallery</a></li>
+
 </ul>
 <div class="main">
 			<!-- MAIN CONTENT -->
@@ -36,11 +38,8 @@
                 <div class="col-md-9">
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><strong>segementation video</strong></h3>
-
+                            <h3 class="panel-title"><strong>Rendering Video Preview</strong></h3>
                         </div>
-
-
                         <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="1024" height="768"
 
                               data-setup="{}">
