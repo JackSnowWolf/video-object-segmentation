@@ -22,28 +22,28 @@ Final project for EECS E6893 Big Data Analytics @ Columbia.
   Present a 3D scatter plot to describe the overall offset of the position coordinates of the object we are tracking, corresponding to the motion trajectory of the object in the video. X-axis and y-axis represent the horizontal and vertical coordinates of the object. 
 Z-axis represents time, in unit of each frame.
 
--Gallery:
+- Gallery:
   A gallery presenting all the cached rendered videos in our project.
 
 
 ## Code
 
-- settings.py
+- settings.py:
   Add Templates Directory URL and Static Directory URL
 
-- urls.py
+- urls.py:
   Add five html templates url into urlpatterns.
 
-- models.py
+- models.py:
   Create a class named by 'Video'. 'Video' includes 'videoname' which has a charfiled for user to input video's name, and 'frame'&'file' which has a filefiled for user to upload first mask file and video file. 
 
-- views.py
+- views.py:
   Assign the api url to the variable 'url'.
-  When user upload a video in video page using post method, function 'upload' will assign the input value to a video class. Then it will send a requests.post to url with the input videoname and two uploaded files. Next, flask api return the rendered video in the content along with the video information in the headers. Write and save the returned files and headers to a specific path. Finally, render_to_response to the video.html along with the specific paths.
-  In other four functions, use render_to_response to redirect to the specific html page directly.
+  When user upload a video in upload.html page using post method, function 'upload' will assign the input value to a video class. Then it will send a requests.post to url with the input videoname and two uploaded files. Next, flask api return the rendered video in the content along with the video information in the headers. Write and save the returned files and headers to a specific path. Finally, render_to_response to the video.html along with the specific paths so that user can watch the rendered video and take a look at the video information at video.html page.\\ 
+  In order to redirect to other four pages including homepage.html,, we use four different functions returning render_to_response to redirect to the specific html page directly.
 
-- templates
-  Basically use html and javascript to build up five html pages with some functions including video upload, video play, data visualization, etc.
+- templates:
+  Basically use html and javascript to build up five html pages with some functions including navigation bar, video upload, rendered video play, data visualization, etc.
 
 ## Contact
 
