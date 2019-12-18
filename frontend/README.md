@@ -39,8 +39,8 @@ Z-axis represents time, in unit of each frame.
 
 - views.py:
   Assign the api url to the variable 'url'.
-  When user upload a video in upload.html page using post method, function 'upload' will assign the input value to a video class. Then it will send a requests.post to url with the input videoname and two uploaded files. Next, flask api return the rendered video in the content along with the video information in the headers. Write and save the returned files and headers to a specific path. Finally, render_to_response to the video.html along with the specific paths so that user can watch the rendered video and take a look at the video information at video.html page.\\ 
-  In order to redirect to other four pages including homepage.html,, we use four different functions returning render_to_response to redirect to the specific html page directly.
+  When user upload a video in upload.html page using post method, function 'upload' will assign the input value to a video class. Then it will send a requests.post to url with the input videoname and two uploaded files. Next, flask api return the rendered video in the content along with the video information in the headers. Write and save the returned files and headers to a specific path. Finally, render_to_response to the video.html along with the specific paths so that user can watch the rendered video and take a look at the video information at video.html page. 
+  In order to redirect to other four pages including homepage.html, we use four different functions returning render_to_response to redirect to the specific html page directly.
 
 - templates:
   Basically use html and javascript to build up five html pages with some functions including navigation bar, video upload, rendered video play, data visualization, etc.
