@@ -117,7 +117,7 @@ DAVIS-2016 Dataset
 ## Presentation
 
 - [Proposal Link](https://docs.google.com/presentation/d/1f9xcCtQVfof7RlOE3WfDpcNH4mab9r5rl-oIq-pGics/edit?usp=sharing)
-- [Final Report Slides Link](https://docs.google.com/presentation/d/1f9xcCtQVfof7RlOE3WfDpcNH4mab9r5rl-oIq-pGics/edit?usp=sharing)
+- [Final Slides Link](https://docs.google.com/presentation/d/1f9xcCtQVfof7RlOE3WfDpcNH4mab9r5rl-oIq-pGics/edit?usp=sharing)
 
 ## Contact
 
