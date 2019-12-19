@@ -10,3 +10,8 @@ __pycache__/
 
 etc
 .Rhistory
+.Rproj.user
+*.Rproj
+*.R
+*.csv
+*.png

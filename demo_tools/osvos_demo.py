@@ -82,7 +82,7 @@ def demo(seq_name, img_path, result_path, concate_path, first_mask,
     for img_p in test_frames:
         frame_num = img_p.split('.')[0]
         img = np.array(Image.open(
-            os.path.join('tmp', seq_name, "img", img_p)))
+            os.path.join(img_path, img_p)))
         mask = np.array(
             Image.open(os.path.join(result_path, frame_num + '.jpg')))
         mask = mask // np.max(mask)
@@ -98,4 +98,4 @@ def demo(seq_name, img_path, result_path, concate_path, first_mask,
                                                                        2])
         im_over = np.where(im_over > 255, 255, im_over)
         im_over = im_over.astype(np.uint8)
-        imageio.imwrite(os.path.join(concate_path, frame_num + ".jpg"), im_over)
+        imageio.imwrite(os.path.join(concate_path, frame_num + ".png"), im_over)
