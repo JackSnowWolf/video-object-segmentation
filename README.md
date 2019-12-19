@@ -73,6 +73,10 @@ paper.
     python3 manage.py runserver
     ```
     
+- Temporary result will be stored in `tmp`.
+- Model weights will be stored in `models`. Notice that code related to
+training is split from demo part. 
+See comments inside `osvos_net` for details.
 
 ### Front-End
 
